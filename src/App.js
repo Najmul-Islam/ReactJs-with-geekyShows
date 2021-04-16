@@ -1,11 +1,20 @@
 import React, { Component } from 'react';
-import Student from './Student';
 
 class App extends Component {
+    componentDidMount(){
+        console.log("App Mounted");
+    }
+
+    componentWillUnmount(){
+        console.log("App Unmounted");
+    }
+
     render() {
+        console.log("App Rendered");
+        
         return (
             <div>
-                <Student />
+                <h1>Hello App Component</h1>
             </div>
         );
     }

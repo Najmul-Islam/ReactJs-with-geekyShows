@@ -17,6 +17,16 @@ class Marks extends Component {
         return null
     }
 
+    shouldComponentUpdate(nextProps, nextState){
+        if(this.state.mroll < 107){
+            console.log("Mark - ShouldComponentUpdate");
+            console.log(nextProps, nextState);
+            return true;
+        }
+        console.log(nextProps, nextState);
+        return false;
+    }
+
     render() {
         console.log("Marks Redndered");
         return (

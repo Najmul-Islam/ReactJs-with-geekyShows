@@ -16,9 +16,6 @@ class Student extends Component {
     })
   }
 
- 
-
-
   render() {
     console.log("Student Rendered");
     return (

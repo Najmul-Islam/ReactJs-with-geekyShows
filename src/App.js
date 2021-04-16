@@ -2,26 +2,32 @@ import React, { Component } from 'react';
 import Student from './Student'
 
 class App extends Component {
-    // constructor(props){
-    //     super(props);
-    //     console.log("APP - Constructor Called");
-    //     console.log(props);
-    //     this.state = {
-    //         roll: "101"
-    //     }
-    // }
+    constructor(props){
+        super(props);
+        console.log("app - constructor called");
+        console.log(props);
 
-    // static getDerivedStateFromProps(props, state){
-    //     console.log("App - Get Derived State From Props");
-    //     console.log(props, state);
+        this.state = {
+            roll: "101"
+        }
+    }
 
-    //     return null
-    // }
+    static getDerivedStateFromProps(props, state){
+        console.log("App - Get derived state from props");
+        console.log(props, state);
+        return null;
+    }
+
+    componentDidMount(){
+        // Get data from server and st the data to
+        console.log("App - componentDidMount - Mounted");
+    }
 
     render() {
+        console.log("App - Rendered");
         return (
             <div>
-                <Student />
+                <Student name="Rahul" />
             </div>
         );
     }

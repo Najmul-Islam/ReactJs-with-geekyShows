@@ -2,4 +2,4 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './App'
 
-ReactDOM.render(<App  name="I_am_app_props"/>, document.getElementById("root"))
+ReactDOM.render(<App name="I_am_app_prop" />, document.getElementById("root"))

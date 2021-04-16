@@ -27,6 +27,18 @@ class Marks extends Component {
         return false;
     }
 
+    getSnapshotBeforeUpdate(prevProps, prevState){
+        console.log("Marks - GetSnapShotBeforeUpdate - It runs before update");
+        console.log(prevProps, prevState );
+        return 45;
+    }
+
+    componentDidUpdate(prevProps, prevState, snapshot){
+        console.log("Marks - ComponentDidUpdate - It runs agter update");
+        console.log(prevProps, prevState, snapshot);
+
+    }
+
     render() {
         console.log("Marks Redndered");
         return (

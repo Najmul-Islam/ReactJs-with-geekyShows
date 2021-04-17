@@ -1,21 +1,30 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 function App (){
-    const [name, setName] = useState("Rahul");
-    const [roll, setRoll] = useState(101)
-    // const name = nameSteteVariable[0]
-    // const setName = nameSteteVariable[1]
+    const [count, setCount] = useState(0);
+    const [count1, setCount1] = useState(50);
 
-    const handleClick = () =>{
-        setName('GeekyShows');
-        setRoll(102)
+    const handleIncrement = () => {
+        setCount(count + 1)
     }
 
-    return(<div>
-        <h1>{name}</h1>
-        <h2>{roll}</h2>
-        <button type="button" onClick={handleClick}>Change </button>
-    </div>)
+    const handleDecrement = () => {
+        setCount1(count1 - 1)
+    }
+    
+    useEffect(() => {
+        console.log("Use Effect Called");
+    },[count1,count])
+
+    return(
+        <React.Fragment>
+            <h1>Count Up: {count}</h1>
+            <button type="button" onClick={handleIncrement}>Increment</button>
+
+            <h1>Count Down: {count1}</h1>
+            <button type="button" onClick={handleDecrement}>Decrement</button>
+        </React.Fragment>
+    )
 }
 
 export default App

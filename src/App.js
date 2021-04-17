@@ -1,14 +1,11 @@
-import React, { Component } from 'react';
-import Student from './Student';
+import React, {useState} from 'react'
 
-class App extends Component {
-    render() {
-        return (
-            <div>
-                <Student />
-            </div>
-        );
-    }
+function App (){
+    const nameSteteVariable = useState("Rahul");
+
+    return(<div>
+        <h1>{nameSteteVariable[0]}</h1>
+    </div>)
 }
 
-export default App;
+export default App

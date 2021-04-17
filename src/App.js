@@ -1,29 +1,15 @@
-import React, {useState, useEffect} from 'react'
+import React from 'react'
+import useCustomCounter from './Custom';
 
-function App (){
-    const [count, setCount] = useState(0);
-    const [count1, setCount1] = useState(50);
 
-    const handleIncrement = () => {
-        setCount(count + 1)
-    }
-
-    const handleDecrement = () => {
-        setCount1(count1 - 1)
-    }
-    
-    useEffect(() => {
-        console.log("Use Effect Called");
-    },[count1,count])
+function App () {
+    const data = useCustomCounter();
 
     return(
-        <React.Fragment>
-            <h1>Count Up: {count}</h1>
-            <button type="button" onClick={handleIncrement}>Increment</button>
-
-            <h1>Count Down: {count1}</h1>
-            <button type="button" onClick={handleDecrement}>Decrement</button>
-        </React.Fragment>
+        <div>
+            <h1>Count Up: {data.count} </h1>
+            <button type="button" onClick={data.handleIncrement} >Increment</button>
+        </div>
     )
 }
 

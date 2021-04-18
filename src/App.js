@@ -3,13 +3,34 @@ import User from './User'
 import Guest from './Guest'
 
 class App extends Component {
-    render() {
-        const isRegistered = this.props.consumer
+    state = {
+        isLoggedIn: false
+    }
 
-        if(isRegistered){
-            return <User />
-        }
-        return <Guest />
+    clickLogin = () => {
+        this.setState({isLoggedIn: true})
+    }
+
+    clickLogout = () => {
+        this.setState({ isLoggedIn: false })
+    }
+
+    render() {
+        const isLoggedIn = this.state.isLoggedIn
+
+        return(
+            <div>
+               {(() => {
+                           if(isLoggedIn){
+                               return <User clickData={this.clickLogout} />
+                           }else{
+                               return <Guest clickData={this.clickLogin} />
+                           }
+                })() 
+               }
+            </div>
+        )
+
     }
 }
 

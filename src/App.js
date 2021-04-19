@@ -1,18 +1,15 @@
-import React, { Component } from 'react';
-import Users from './Users'
+import React, { Component } from 'react'
+import User from './User'
+import Styles from "./App.module.css"
 
 class App extends Component {
+    
     render() {
-        const arr = this.props.numbers
-
-        const newArr = arr.map((num) => {
-            return <Users key={num} value={num}/>
-        })
-
         return (
-            <div>
-                <ul>{newArr}</ul>
-            </div>
+            <React.Fragment>
+                <h1 className={Styles.txt}>Hello App</h1>
+                <User />
+            </React.Fragment>
         );
     }
 }

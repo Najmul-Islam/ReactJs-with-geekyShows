@@ -7,8 +7,7 @@ class App extends Component {
     render() {
         return (
             <React.Fragment>
-                <h1 className={Styles.txt}>Hello App</h1>
-                <User />
+                <button type="button" className="btn btn-primary">Normal Button</button>
             </React.Fragment>
         );
     }
